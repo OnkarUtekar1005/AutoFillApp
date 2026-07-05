@@ -1,0 +1,38 @@
+# ─────────────────────────────────────────────────────────────
+# Client data — CONFIDENTIAL, never commit (real financial docs,
+# emails, CINs, filing folders). This is the most important part.
+# ─────────────────────────────────────────────────────────────
+sample_data/
+finaloutput/
+**/extracted.json
+manual_values.json
+clients.json
+fill_queue.json
+*.xlsx
+*.xls
+
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Node / frontend build (ui/ has its own .gitignore too)
+node_modules/
+ui/dist/
+dist/
+*.log
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Claude local settings / runtime locks (machine-specific)
+.claude/settings.local.json
+.claude/*.lock

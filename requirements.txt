@@ -1,0 +1,32 @@
+# API server (for the React frontend)
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+
+# Core extraction (free regex/heuristic pipeline)
+pdfplumber>=0.10.0          # digital PDF table + text extraction
+openpyxl>=3.1.0             # Excel (.xlsx) read/write (also used for finaloutput/*.xlsx)
+python-docx>=1.1.0          # Word (.docx) read
+
+# OCR (Tesseract-based) — used by the free regex pipeline for scanned PDFs/images
+pytesseract>=0.3.13         # Tesseract Python wrapper
+pdf2image>=1.17.0           # PDF page -> PIL Image (needs poppler)
+Pillow>=10.0.0              # PIL Image handling
+
+# Primary document->markdown converter for the LLM gap-fill step (MIT license, no OCR)
+markitdown[all]>=0.0.1a2
+
+# NOTE: System dependencies required (not pip-installable):
+#   Tesseract OCR  -> https://github.com/UB-Mannheim/tesseract/wiki
+#                     Add install dir to PATH, e.g. C:\Program Files\Tesseract-OCR
+#   Poppler        -> https://github.com/oschwartz10612/poppler-windows/releases
+#                     Extract and add bin\ folder to PATH
+
+# ── Optional fallbacks (only used when markitdown's output is near-empty) ──
+# marker-pdf: local OCR + best table fidelity, GPL-licensed, heavy (PyTorch + ML models).
+#   pip install marker-pdf
+# Claude gap-fill: NOT a pip package — uses the `claude` CLI (Claude Code) directly,
+#   so it runs on whatever account it's logged into (e.g. a claude.ai Max/Pro
+#   subscription's included usage), not separate pay-per-token API billing.
+#   Requires the `claude` CLI installed + logged in, AND the explicit opt-in
+#   AOC4_ALLOW_CLAUDE=1 env var (see extractor/extraction/llm_gapfill.py for the
+#   client-data safeguard this enforces).
