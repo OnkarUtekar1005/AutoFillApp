@@ -11,7 +11,7 @@ filing on the MCA portal.
 
 ```
 C:\path\to\data\
-  ATS System Pvt Ltd_U74999MH2020PTC123456\      <- "ClientName_CIN"
+  Techview Pvt Ltd_Us23145245234\      <- "ClientName_CIN"
     data\                                         <- files to extract fields from
       balance_sheet.pdf
       profit_loss.xlsx
@@ -20,7 +20,7 @@ C:\path\to\data\
     attachments\                                  <- files uploaded as-is to MCA (not parsed)
       signed_balance_sheet.pdf
       aoc2.pdf
-  Another Company Ltd_U12345DL2019PTC654321\
+  Another Company Ltd_Us23145245234\
     data\
       ...
     attachments\
@@ -28,7 +28,7 @@ C:\path\to\data\
 ```
 
 - The client folder name must end with the company's 21-character CIN (e.g.
-  `..._U74999MH2020PTC123456`) so filings are matched by CIN automatically. If
+  `...Us23145245234`) so filings are matched by CIN automatically. If
   you forget, the tool still works — it falls back to reading the CIN from the
   documents themselves and flags a warning.
 - `data\` can contain files directly (single filing period) or year subfolders
