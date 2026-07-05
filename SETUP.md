@@ -10,7 +10,7 @@ filing on the MCA portal.
 ## Folder structure (per client)
 
 ```
-D:\Data\
+C:\path\to\data\
   ATS System Pvt Ltd_U74999MH2020PTC123456\      <- "ClientName_CIN"
     data\                                         <- files to extract fields from
       balance_sheet.pdf
@@ -46,7 +46,7 @@ Node.js: https://nodejs.org/
 ## Step 2 — Create the virtual environment and install packages (one time only)
 
 ```powershell
-cd "D:\Projects\CS Lalit aUTOFILLING APPLCIATION"
+cd "C:\path\to\aoc4-filing-automation"
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
@@ -105,15 +105,15 @@ Claude with its file-read permission checks bypassed so it can work unattended.
 ## Step 5 — Run the extractor (command line)
 
 ```powershell
-cd "D:\Projects\CS Lalit aUTOFILLING APPLCIATION"
-python -m extractor "D:\Data"
+cd "C:\path\to\aoc4-filing-automation"
+python -m extractor "C:\path\to\data"
 ```
 
 Options: `--verbose` (per-file details), `--client "ATS System"`, `--period "2024-25"`, `--json`.
 
 This writes, per client filing:
 - `data\extracted.json` — full machine-readable result
-- `D:\Data\finaloutput\<ClientName>_<CIN>.xlsx` — the file you actually work from
+- `C:\path\to\data\finaloutput\<ClientName>_<CIN>.xlsx` — the file you actually work from
 
 ## Step 6 — Review and fix in Excel
 
@@ -133,18 +133,18 @@ Open the client's file in `finaloutput\`. It has four sheets:
 **Terminal 1:**
 ```powershell
 .venv\Scripts\Activate.ps1
-cd "D:\Projects\CS Lalit aUTOFILLING APPLCIATION\ui"
+cd "C:\path\to\aoc4-filing-automation\ui"
 python server.py
 ```
 
 **Terminal 2:**
 ```powershell
-cd "D:\Projects\CS Lalit aUTOFILLING APPLCIATION\ui"
+cd "C:\path\to\aoc4-filing-automation\ui"
 npm install      # first time only
 npm run dev
 ```
 
-Open `http://localhost:5173`, paste the root folder path (e.g. `D:\Data`), and
+Open `http://localhost:5173`, paste the root folder path (e.g. `C:\path\to\data`), and
 click Extract. You'll see every client with a status chip:
 
 | Status | Meaning |

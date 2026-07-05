@@ -9,12 +9,12 @@ This assumes one-time setup (see `SETUP.md`) is already done — Python, Node,
 ## Option A — Command line only (fastest, no browser)
 
 ```powershell
-cd "D:\Projects\CS Lalit aUTOFILLING APPLCIATION"
+cd "C:\path\to\aoc4-filing-automation"
 .venv\Scripts\Activate.ps1
-python -m extractor "D:\Data" --verbose
+python -m extractor "C:\path\to\data" --verbose
 ```
 
-Then open the client's Excel file in `D:\Data\finaloutput\`.
+Then open the client's Excel file in `C:\path\to\data\finaloutput\`.
 
 ## Option B — Web Dashboard (see all clients at a glance)
 
@@ -22,7 +22,7 @@ Needs **two terminal windows**, both left open while you work.
 
 **Terminal 1 — API server** (leave running):
 ```powershell
-cd "D:\Projects\CS Lalit aUTOFILLING APPLCIATION"
+cd "C:\path\to\aoc4-filing-automation"
 .venv\Scripts\Activate.ps1
 cd ui
 python server.py
@@ -30,12 +30,12 @@ python server.py
 
 **Terminal 2 — Dashboard**:
 ```powershell
-cd "D:\Projects\CS Lalit aUTOFILLING APPLCIATION\ui"
+cd "C:\path\to\aoc4-filing-automation\ui"
 npm run dev
 ```
 
 Open **http://localhost:5173** in your browser, paste your data folder path
-(e.g. `D:\Data`), click **Extract**.
+(e.g. `C:\path\to\data`), click **Extract**.
 
 ## Stopping
 
