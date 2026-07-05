@@ -35,7 +35,7 @@ invoked by the app. It's kept only for reference.
     "client_name": "...", "cin": "...", "period": "...", "status": "Ready",
     "fields": [
       { "key": "cin", "label": "Corporate Identification Number (CIN)",
-        "value": "U74999PN2018PTC179514", "section": "Part A — Company Identity",
+        "value": "1234354", "section": "Part A — Company Identity",
         "source": "AUTO" },
       ...
     ]
